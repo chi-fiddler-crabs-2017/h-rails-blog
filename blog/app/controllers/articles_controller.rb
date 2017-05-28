@@ -5,11 +5,14 @@ class ArticlesController < ApplicationController
 	def create
 		@article = Article.new(article_params)
 		if @article.save
-			render "welcome/index"
+			redirect_to @article
 		else
 		@errors = @article.errors.full_messages
 		render "articles/new"
 		end
+	end
+	def show 
+		@article = Article.find(params[:id])
 	end
 
 	private 

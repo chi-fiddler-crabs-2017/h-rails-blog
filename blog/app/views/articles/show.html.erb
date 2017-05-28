@@ -1,0 +1,9 @@
+<h1 class="title"> 
+<%= @article.title %>
+</h1>
+<p class="date">
+submitted <%= time_ago_in_words(@article.created_at) %> Ago
+</p>
+<p class ="text">
+<%= @article.text %>
+</p>
