@@ -13,6 +13,36 @@
   <script src="/js/application.js"></script>
 </head>
 <body>
+  <% if logged_in? && current_user%>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Bloggy Blog</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/users/<%= current_user.id%>"><%= current_user.email%></a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/users/new">Register</a></li>
+
+
+        <!-- <li><a href="#">Page 3</a></li> -->
+      </ul>
+    </div>
+
+<% else %>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Bidding World</a>
+      </div>
+      <ul class="nav navbar-nav">
+         <li><a href="/sessions/new">Login</a></li>
+        <li><a href="/users/new">Add a new user</a></li>
+        <!-- <li><a href="#">Page 3</a></li> -->
+      </ul>
+    </div>
+<% end %>
+</nav>
 
 <%= yield %>
 
