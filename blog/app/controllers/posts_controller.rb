@@ -4,13 +4,16 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
   end
 
   def create
     @post = Post.new(post_params)
-    @post.save
-
-    redirect_to @post
+    if @post.save
+      redirect_to @post
+    else
+      render 'new' # redirect does complete refresh (so loss of content in form occurs), render keeps content in place if error occurs
+    end
   end
 
   def show
