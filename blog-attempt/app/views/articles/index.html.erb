@@ -9,6 +9,7 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
+      <td><%= link_to 'View Article', article_path(article) %></td>
     </tr>
   <% end %>
 </table>
