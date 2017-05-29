@@ -13,16 +13,16 @@
   <script src="/js/application.js"></script>
 </head>
 <body>
-  <% if logged_in? && current_user%>
+  <% if user_signed_in? %>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="/">Bloggy Blog</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="/users/<%= current_user.id%>"><%= current_user.email%></a></li>
-        <li><a href="/logout">Logout</a></li>
+        <li><a href="/users/sign_out">Logout</a></li>
         <li><a href="/users/new">Register</a></li>
+         <li><a href="/articles/new">Add a post</a></li>
 
 
         <!-- <li><a href="#">Page 3</a></li> -->
