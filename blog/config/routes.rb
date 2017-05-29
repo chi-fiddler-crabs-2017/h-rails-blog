@@ -3,6 +3,8 @@ Blog::Application.routes.draw do
     resources :comments #nested route
   end
 
+  resources :users
+
   root "posts#index"
 
   get '/about', to: 'pages#about' # just have to do /about
